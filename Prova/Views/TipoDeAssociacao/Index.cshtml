@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Prova.Models.TipoDeAssociacao>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alunos</h2>
+
+@if (@Model.Any())
+{
+
+    <table class="table">
+        <caption>Optional table caption.</caption>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Período</th>
+                <th>Mensalidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tipoAssociacao in Model)
+            {
+                <tr>
+                    <th scope="row">@Html.ActionLink(@tipoAssociacao.Nome, "Details", new { tipoAssociacao.Id})</th>
+                    <td>@tipoAssociacao.Periodo</td>
+                    <td>@tipoAssociacao.Mensalidade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+
+    <p>Nenhum aluno cadastrado!</p>
+
+}

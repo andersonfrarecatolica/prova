@@ -1,0 +1,14 @@
+﻿@model Prova.Models.Aluno
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes do Aluno</h2>
+
+<ul>
+    <li>Nome: @Model.Nome</li>
+    <li>CPF: @Model.Cpf</li>
+    <li>Faixa: @Model.Faixa.Nome</li>  
+    <li>Tipo de Associação: @Model.TipoDeAssociacao.Nome</li>
+</ul>
